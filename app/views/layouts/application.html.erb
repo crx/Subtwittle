@@ -9,6 +9,8 @@
 <body>
   
   <h1>Tweet Visualizer</h1>
+  
+  <% if flash[:error] %><p class="error"><%= flash[:error] %></p><% end %>
 
 <%= yield %>
 

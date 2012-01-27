@@ -11,8 +11,18 @@ class TweetimageController < ApplicationController
     @handle = params[:twitter_handle]
 
     # fetch tweets
-    twitter_api_url = "https://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=#{@handle}&count=10"
-    tweets = JSON.parse(open(twitter_api_url).read).map {|t| t['text'] }
+    twitter_api_url = "https://api.twitter.com/1/statuses/user_timeline.json?screen_name=#{@handle}&count=10"
+    begin
+      tweets = JSON.parse(open(twitter_api_url).read).map {|t| t['text'] }
+    rescue OpenURI::HTTPError => err
+      tweets = []
+      flash[:error] = case err.message
+        when '401 Unauthorized'
+          'Twitter user not does not permit their tweets to be accessed by outside services.'
+        else
+          'Something went wrong!'
+      end
+    end
     
     @tweets = {}
     tweets.each do |tweet|

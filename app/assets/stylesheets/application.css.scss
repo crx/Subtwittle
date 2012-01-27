@@ -17,3 +17,15 @@ html, body {
   margin: 0 auto;
   font-family: Helvetica, Arial, sans-serif;
 }
+
+.error {
+  border: 3px solid #a61a00;
+  background-color: #ff8973;
+  padding: 8px;
+}
+
+.notice {
+  border: 3px solid #bfa730;
+  background-color: #ffe773;
+  padding: 8px;
+}
