@@ -1,6 +1,10 @@
-<dl>
+<p>Showing <span class="tweet_count"><%= @tweets.size %></span> most recent tweets from <span class="handle"><%= @handle %></span>.</p>
+
+<ul id="tweet_list">
 <% @tweets.each do |tweet, image_url| %>
-  <dt><%= tweet %></dt>
-  <dd><%= image_tag image_url %></dd>
+  <li>
+    <%= image_tag image_url %>
+    <span class="tweet"><%= tweet %></span>
+  </li>
 <% end %>
-</dl>
+</ul>

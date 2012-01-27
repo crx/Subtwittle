@@ -39,6 +39,7 @@ Subtwittle::Application.routes.draw do
   #     end
   #   end
 
+  match "/tweetimage" => "tweetimage#index"
   match "/tweetimage/:twitter_handle" => "tweetimage#show", :as => :twitter_user
 
   # Sample resource route within a namespace:

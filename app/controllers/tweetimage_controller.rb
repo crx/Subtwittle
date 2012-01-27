@@ -3,9 +3,15 @@ require 'tweet_filter'
 
 class TweetimageController < ApplicationController
   
+  def index
+    redirect_to "/tweetimage/#{params[:twitter_handle]}"
+  end
+  
   def show
+    @handle = params[:twitter_handle]
+
     # fetch tweets
-    twitter_api_url = "https://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=#{params[:twitter_handle]}&count=10"
+    twitter_api_url = "https://api.twitter.com/1/statuses/user_timeline.json?include_entities=true&include_rts=true&screen_name=#{@handle}&count=10"
     tweets = JSON.parse(open(twitter_api_url).read).map {|t| t['text'] }
     
     @tweets = {}

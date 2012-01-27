@@ -1,6 +1,6 @@
-<%= form_tag twitter_user_path do %>
-  <%= label_tag :user, 'Twitter Handle' %>
-  <%= text_field_tag :user %>
+<%= form_tag twitter_user_path, :method => :get do %>
+  <%= label_tag :user, 'Twitter Handle:' %>
+  <%= text_field_tag :twitter_handle %>
   
   <%= submit_tag 'Visualize Tweets'%>
   

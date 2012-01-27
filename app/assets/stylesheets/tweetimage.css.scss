@@ -1,3 +1,31 @@
 // Place all the styles related to the tweetimage controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.tweet_count, .handle {
+  font-weight: bold;
+}
+
+#tweet_list {
+
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    display: block;
+    clear: left;
+    margin: 0;
+    padding: 0;
+  }
+
+  img {
+    float: left;
+    margin-bottom: 1em;
+    margin-right: 1em;
+  }
+  
+  .tweet {
+  }
+
+}
