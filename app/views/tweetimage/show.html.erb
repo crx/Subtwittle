@@ -1,4 +1,6 @@
+<dl>
 <% @tweets.each do |tweet, image_url| %>
-  <p><%= tweet %></p>
-  <p><%= image_tag image_url %></p>
+  <dt><%= tweet %></dt>
+  <dd><%= image_tag image_url %></dd>
 <% end %>
+</dl>

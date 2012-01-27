@@ -39,7 +39,7 @@ Subtwittle::Application.routes.draw do
   #     end
   #   end
 
-  match "/tweetimage/:twitter_handle" => "tweetimage#show"
+  match "/tweetimage/:twitter_handle" => "tweetimage#show", :as => :twitter_user
 
   # Sample resource route within a namespace:
   #   namespace :admin do
@@ -50,7 +50,7 @@ Subtwittle::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"
 
