@@ -3,7 +3,7 @@
 <ul id="tweet_list">
 <% @tweets.each do |tweet, image_url| %>
   <li>
-    <%= image_tag image_url %>
+    <span class="image"><%= image_tag image_url %></span>
     <span class="tweet"><%= tweet %></span>
   </li>
 <% end %>

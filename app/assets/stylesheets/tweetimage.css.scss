@@ -17,15 +17,31 @@
     clear: left;
     margin: 0;
     padding: 0;
+    margin-bottom: 1em;
   }
 
-  img {
+  .image {
     float: left;
-    margin-bottom: 1em;
-    margin-right: 1em;
+    margin-right: 16px;
+    width: 135px;
+    overflow: hidden;
+    text-align: right;
+  }
+  
+  // clearfix: http://www.positioniseverything.net/easyclearing.html
+  li:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
   }
   
   .tweet {
+    float: left;
+    width: 789px;
+    padding: 10px;
+    background: #ddd;
   }
 
 }
